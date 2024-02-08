@@ -1,0 +1,45 @@
+@import './mixins.scss';
+@import './colors.scss';
+
+.popular {
+  display: contents;
+
+  &__item {
+    @include anchor-reset;
+    display: grid;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    grid-template-columns: auto 1fr;
+
+    @include desktop {
+      margin-bottom: 0;
+      grid-template-columns: 1fr 2fr;
+    }
+  }
+
+  &__rank {
+    color: $grayish-blue;
+    font-size: 32px;
+    font-weight: bold;
+  }
+
+  &__text-column {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  &__title {
+    font-size: 20px;
+    font-weight: bold;
+    &:hover {
+      color: $soft-orange;
+    }
+  }
+
+  &__description {
+    color: $dark-grayish-blue;
+    font-size: 15px;
+    line-height: 1.5;
+  }
+}

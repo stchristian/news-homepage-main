@@ -1,0 +1,51 @@
+@import './mixins.scss';
+@import './colors.scss';
+
+.featured-article {
+  margin-bottom: 4rem;
+
+  @include desktop {
+    grid-area: a;
+    margin-bottom: initial;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  &__img {
+    @include desktop {
+      grid-column: 1 / span 2;
+    }
+  }
+
+  &__title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 1rem 0 1rem 0;
+
+    @include desktop {
+      font-size: 3rem;
+    }
+  }
+
+  &__description {
+    color: $dark-grayish-blue;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+  }
+
+  &__button {
+    @include button-reset;
+    padding: 1rem 2rem;
+    background-color: $soft-red;
+    color: $off-white;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-weight: bold;
+
+    &:hover {
+      background-color: $very-dark-blue;
+      color: $off-white;
+    }
+  }
+}

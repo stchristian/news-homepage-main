@@ -1,0 +1,105 @@
+@import url("https://cdn.jsdelivr.net/gh/jgthms/minireset.css@master/minireset.min.css"); // Probably shouldn't use reset when using BEM
+@import "./mixins.scss";
+@import "./colors.scss";
+@import "./popular.scss";
+@import "./new-articles.scss";
+@import "./featured-article.scss";
+
+body {
+  font-family: "Inter";
+  font-size: 0.9375rem; // 15px 
+}
+
+.header {
+  @include container; 
+  padding: 1.5rem 1rem;
+  justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+
+  @include desktop {
+    align-items: center;
+  }
+}
+
+.menu {
+  display: none;
+  background-color: $off-white;
+  width: 15em;
+  position: fixed;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  padding: 2rem;
+  
+  @include desktop {
+    display: initial;
+    position: initial;
+    width: auto;
+  }
+
+  &--open {
+    display: block;
+  }
+
+  &__close {
+    @include button-reset;
+
+    margin-bottom: 48px;
+    margin-left: auto;
+    display: block;
+
+    @include desktop {
+      display: none;
+    }
+  }
+  
+  &__hamburger {
+    @include button-reset;
+    @include desktop {
+      display: none;
+    }
+  }
+}
+
+
+.navigation {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  &__item {
+    @include anchor-reset;
+
+    &:hover {
+      color: $soft-orange;
+    }
+  }
+
+  @include desktop {
+    flex-direction: row;
+    
+  }
+}
+
+.main-content {
+  @include container;
+
+  padding: 0 1rem;
+  
+  @include desktop {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: 
+    "a a b" 
+    ". . .";
+    gap: 1.5rem;
+    margin-bottom: 4rem;
+  }
+}
+
+.attribution {
+  text-align: center;
+}
+

@@ -1,0 +1,27 @@
+@mixin button-reset {
+  padding: 0;
+  border: none;
+  color: inherit;
+  background-color: transparent;
+  font: inherit;
+  cursor: pointer;
+}
+
+@mixin anchor-reset {
+  color: inherit;
+  text-decoration: none;
+}
+
+@mixin container {
+  max-width: 1250px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+$desktop-breakpoint: 1024px;
+
+@mixin desktop {
+  @media (min-width: #{$desktop-breakpoint}) {
+    @content;
+  }
+}
