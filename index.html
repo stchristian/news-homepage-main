@@ -17,7 +17,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
   </head>
   <body>
-    <header class="header">
+    <header class="navigation-bar">
       <!-- <h1><a href="#">Your Website Name</a></h1> -->
       <a href="#"><img src="./assets/images/logo.svg" alt="logo" /></a>
       <nav id="menu" class="menu">
@@ -25,12 +25,12 @@
           <img src="./assets/images/icon-menu-close.svg" aria-hidden="true" />
         </button>
         <nav aria-label="Main navigation menu">
-          <ul class="navigation">
-            <li><a class="navigation__item" href="#home">Home</a></li>
-            <li><a class="navigation__item" href="#new">New</a></li>
-            <li><a class="navigation__item" href="#popular">Popular</a></li>
-            <li><a class="navigation__item" href="#trending">Trending</a></li>
-            <li><a class="navigation__item" href="#categories">Categories</a></li>
+          <ul class="navigation-list">
+            <li><a class="navigation-list__item" href="#home">Home</a></li>
+            <li><a class="navigation-list__item" href="#new">New</a></li>
+            <li><a class="navigation-list__item" href="#popular">Popular</a></li>
+            <li><a class="navigation-list__item" href="#trending">Trending</a></li>
+            <li><a class="navigation-list__item" href="#categories">Categories</a></li>
           </ul>
         </nav>
       </nav>
@@ -112,16 +112,19 @@
       const hamburgerBtn = document.querySelector(".menu__hamburger");
       const closeBtn = document.querySelector(".menu__close");
       const menu = document.querySelector(".menu");
+      const body = document.querySelector("body");
 
       hamburgerBtn.addEventListener("click", () => {
         if (hamburgerBtn.ariaExpanded === "false") {
           menu.classList.add("menu--open");
+          body.classList.add("overlay");
           hamburgerBtn.setAttribute("aria-expanded", "true");
         }
       });
 
       closeBtn.addEventListener("click", () => {
         menu.classList.remove("menu--open");
+        body.classList.remove("overlay");
         hamburgerBtn.setAttribute("aria-expanded", "false");
       });
     </script>

@@ -29,13 +29,15 @@
   }
 
   &__description {
+    @include text-paragraph;
+
     color: $dark-grayish-blue;
-    line-height: 1.7;
     margin-bottom: 2rem;
   }
 
   &__button {
     @include button-reset;
+    
     padding: 1rem 2rem;
     background-color: $soft-red;
     color: $off-white;

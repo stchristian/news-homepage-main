@@ -31,6 +31,7 @@
     font-size: 1rem;
     font-weight: bold;
     margin-bottom: 0.75rem;
+
     &:hover {
       color: $soft-orange;
     }
@@ -41,7 +42,8 @@
   }
 
   &__description {
-    line-height: 1.7;
+    @include text-paragraph;
+    
     color: $grayish-blue;
   }
 

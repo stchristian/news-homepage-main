@@ -18,6 +18,11 @@
   margin-right: auto;
 }
 
+@mixin text-paragraph {
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
 $desktop-breakpoint: 1024px;
 
 @mixin desktop {
